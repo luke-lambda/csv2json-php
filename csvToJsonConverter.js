@@ -19,9 +19,19 @@ function csv2json() {
         lineJSON.push(obj);
     }
 
-    document.querySelector('textarea.form-control#inputJSON').value = JSON.stringify(lineJSON);
+    return JSON.stringify(lineJSON);
+}
+
+function convert() {
+    let lineJSON = csv2json();
+
+    document.querySelector('textarea.form-control#inputJSON').value = lineJSON;
     document.querySelector('span#labelInputJSON').classList.add("bg-success");
     document.querySelector('span#labelInputJSON').classList.add("text-white");
     document.querySelector('textarea.form-control#inputJSON').classList.add("bg-dark");
     document.querySelector('textarea.form-control#inputJSON').classList.add("text-light");
+}
+
+function prepareToDownload() {
+    document.querySelector('input#foo').value = csv2json();
 }

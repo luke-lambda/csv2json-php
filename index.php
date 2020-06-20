@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="csvToJsonConverter.php" method="POST">
+        <form action="csvToJsonDownload.php" method="POST">
             <div class="input-group mt-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">CSV</span>
@@ -17,8 +17,8 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="button" onclick="csv2json();" class="btn btn-primary mt-3 w-25">Convert</button>
-                <button type="submit" class="btn btn-secondary mt-3 w-25 ml-2">Download</button>
+                <button type="button" onclick="convert();" class="btn btn-primary mt-3 w-25">Convert</button>
+                <button type="submit" onclick="prepareToDownload();" class="btn btn-secondary mt-3 w-25 ml-2">Download</button>
             </div>
 
             <div class="input-group mt-3">
@@ -28,6 +28,8 @@
                 <textarea class="form-control" aria-label="JSON" name="inputJSON" id="inputJSON" disabled>
                 </textarea>
             </div>
+
+            <input type="hidden" name="foo" id="foo">
         </form>
     </div>
 
